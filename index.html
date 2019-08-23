@@ -9,6 +9,12 @@
     <script src="TemplateData/UnityProgress.js"></script>  
     <script src="Build/UnityLoader.js"></script>
     <script>
+      // To prevent error you need to set this before calling UnityLoader.instantiate()
+      UnityLoader.Compression.gzip = UnityLoader.Compression.identity;
+      UnityLoader.Compression.brotli = UnityLoader.Compression.identity;
+      UnityLoader.Compression.identity.hasUnityMarker = function() { return false;};
+      UnityLoader.Cryptography.crc32 = null;
+      UnityLoader.Cryptography.sha1 = null;
       var gameInstance = UnityLoader.instantiate("gameContainer", "Build/Default WebGL.json", {onProgress: UnityProgress});
     </script>
   </head>
