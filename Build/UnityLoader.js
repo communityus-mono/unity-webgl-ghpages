@@ -499,7 +499,7 @@ var UnityLoader = UnityLoader || {
 		} else if ((verOffset = nAgt.indexOf('Chrome')) != -1) {
 			browser = 'Chrome';
 			version = nAgt.substring(verOffset + 7);
-		} else if ((verOffset = nAgt.indexOf('Safari')) != -1) {
+		} else if ((verOffset = nAgt.indexOf('AppleWebKit')) != -1) {
 			browser = 'Safari';
 			version = nAgt.substring(verOffset + 7);
 			if ((verOffset = nAgt.indexOf('Version')) != -1) {
